@@ -1,0 +1,33 @@
+secret_key_base: FRmJmOal2g1gyk7McgmuWj41Gn9C5ReKEJUhDKf09Rw
+port: 3000
+name: testing-auth
+logging:
+  severity: debug
+  colorize: true
+  filter:
+    - password
+    - confirm_password
+  skip:
+    -
+  context:
+    - request
+    - session
+    - headers
+    - cookies
+    - params
+
+host: 0.0.0.0
+port_reuse: true
+process_count: 1
+# ssl_key_file:
+# ssl_cert_file:
+redis_url: "redis://localhost:6379"
+database_url: postgres://postgres:@localhost:5432/testing_auth_development
+session:
+  key: amber.session
+  store: signed_cookie
+  expires: 0
+
+secrets:
+  description: Store your development secrets credentials and settings here.
+
